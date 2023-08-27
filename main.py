@@ -49,3 +49,5 @@ if __name__ == "__main__":
 
     for recipe in stored_recipes:
         print(recipe.title)
+        print(recipe.get_summary())
+        print(recipe.ingredients)

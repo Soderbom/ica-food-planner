@@ -7,3 +7,14 @@ class Ingredient:
 
     def __str__(self):
         return f"{self.quantity} {self.unit if self.unit else ''} {self.name}"
+
+    def __add__(self, other):
+        # TODO Check unit
+        return self.quantity + other.quantity
+
+
+if __name__ == "__main__":
+    a = Ingredient(0, "a", 1, "g")
+    b = Ingredient(0, "a", 3, "g")
+
+    assert a + b == 4
