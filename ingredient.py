@@ -6,7 +6,7 @@ class Ingredient:
         self.unit = unit
 
     def __str__(self):
-        return f"{self.quantity} {self.unit if self.unit else ''} {self.name}"
+        return f"{self.quantity:5} {self.unit if self.unit else '':4} {self.name}"
 
     def __add__(self, other):
         # TODO Check unit

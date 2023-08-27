@@ -45,8 +45,30 @@ class FoodPlanner:
                     ingredients[id] = ingredient
         self.shopping_list = ingredients
 
+    def print_shopping_list(self):
+        with open("shopping_list.txt", "w") as f:
+            f.write("Shopping List\n")
+            for ingredient in self.shopping_list.values():
+                f.write(f"{ingredient}\n")
+
+    def print_recipes(self):
+        with open("weekly_recipes.txt", "w") as f:
+            for recipe in self.meals:
+                f.write(f"{recipe.title}\n")
+                f.write(f"{recipe.summary}\n\n")
+                f.write("Ingredients:\n")
+                for ingredient in recipe.ingredients.values():
+                    f.write(f"{ingredient}\n")
+                f.write("\n\n")
+                f.write("Cooking steps:\n")
+                for i, step in enumerate(recipe.cooking_steps):
+                    f.write(f"{i+1:3}. {step}\n")
+                f.write("-"*10 + "\n\n")
+
 
 if __name__ == "__main__":
     fp = FoodPlanner(2)
     fp.new_week()
     fp.new_shopping_list()
+    fp.print_shopping_list()
+    fp.print_recipes()

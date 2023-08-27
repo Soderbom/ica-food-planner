@@ -1,2 +1,5 @@
 SECRET.py
 **/__pycache__
+weekly_recipes.txt
+shopping_list.txt
+.DS_Store
